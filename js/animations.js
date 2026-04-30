@@ -144,7 +144,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const element = entry.target;
-                    const target = parseInt(element.dataset.count) || 500;
+                    const target = parseInt(element.dataset.count) || 100;
                     const duration = parseInt(element.dataset.duration) || 2000;
                     const prefix = element.dataset.prefix || '';
                     const suffix = element.dataset.suffix || '+';
