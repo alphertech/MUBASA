@@ -630,6 +630,7 @@ ul, ol {
 .gallery-album-cover img {
     width: 100%;
 }
+
 .gallery-album-cover::after { content: ''; color: var(--primary-light); font-size: 0.9rem; }
 .gallery-album-info { padding: 24px; }
 .gallery-album-info h4 { font-size: 1.15rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; }
