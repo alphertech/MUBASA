@@ -32,6 +32,8 @@
         initMobileMenuAnimations();
         initFormInputAnimations();
         initScrollProgressAnimations();
+        initScrollToTop();
+        initSimpleAnimations();
     }
 
     /**
@@ -314,6 +316,7 @@
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
             if (!isExpanded) {
+                navLinks.classList.add('active');
                 navLinks.classList.add('opening');
                 navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
                 
@@ -322,6 +325,7 @@
                     navLinks.classList.add('open');
                 }, 300);
             } else {
+                navLinks.classList.remove('active');
                 navLinks.classList.remove('open');
                 navLinks.style.maxHeight = '0';
             }
@@ -374,6 +378,44 @@
             
             progressBar.style.width = progress + '%';
         }, { passive: true });
+    }
+
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
+        const scrollTopBtn = document.getElementById('scrollTop');
+        if (!scrollTopBtn) return;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /**
+     * Simple animation observer for .animate elements
+     */
+    function initSimpleAnimations() {
+        const animateElements = document.querySelectorAll('.animate');
+        if (animateElements.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(el => observer.observe(el));
     }
 
     /**

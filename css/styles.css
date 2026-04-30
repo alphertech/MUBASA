@@ -814,9 +814,9 @@ ul, ol {
 
 @media (max-width: 768px) {
     :root { --section-padding: 60px; }
-    .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 10px 30px var(--shadow); gap: 0; }
+    .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: #000000; flex-direction: column; padding: 20px; box-shadow: 0 10px 30px var(--shadow); gap: 0; }
     .nav-links.active { display: flex; }
-    .nav-links a { width: 100%; padding: 14px 18px; border-radius: var(--radius-md); }
+    .nav-links a { width: 100%; padding: 14px 18px; border-radius: var(--radius-md); color: #ffffff; }
     .nav-cta { display: none; }
     .mobile-toggle { display: flex; }
     .hero { padding: 50px 0 40px; }
