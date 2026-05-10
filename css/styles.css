@@ -795,7 +795,7 @@ ul, ol {
 }
 .leader-image { 
     width: 100%; 
-    height: 280px; 
+    aspect-ratio: 1; 
     background: var(--primary-bg); 
     border-bottom: 2px dashed var(--primary-lighter); 
     display: flex; 
@@ -893,9 +893,7 @@ ul, ol {
     align-self: stretch; 
 }
 .blog-card.blog-preview-card .blog-image { 
-    height: 240px; 
-    min-height: 240px; 
-    max-height: 240px; 
+    aspect-ratio: 1; 
 }
 .blog-card.blog-preview-card .blog-image,
 .blog-card.blog-preview-card .blog-content { 
@@ -906,7 +904,7 @@ ul, ol {
 }
 .blog-image { 
     width: 100%; 
-    min-height: 220px; 
+    aspect-ratio: 1; 
     background: var(--primary-bg); 
     border-bottom: 2px dashed var(--primary-lighter); 
     display: flex; 
@@ -922,7 +920,7 @@ ul, ol {
 .blog-image img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; 
+    object-fit: contain; 
 }
 .blog-content { 
     padding: 28px; 
@@ -2101,9 +2099,6 @@ ul, ol {
     .form-row { 
         grid-template-columns: 1fr; 
     }
-    .leader-image { 
-        height: 240px; 
-    }
 }
 
 @media (max-width: 480px) {
@@ -2200,9 +2195,7 @@ ul, ol {
         width: 44px; 
         height: 44px; 
     }
-    .leader-image { 
-        height: 200px; 
-    }
+   
     .testimonial-card::before { 
         font-size: 3rem; 
         top: 10px; 
